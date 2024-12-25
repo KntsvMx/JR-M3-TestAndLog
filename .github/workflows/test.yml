@@ -22,6 +22,10 @@ jobs:
       - name: Run tests with Maven
         run: mvn --batch-mode --update-snapshots test
 
+      - name: List target directory contents
+        run: ls -R target
+        if: always()
+
       - name: Tests Report 1
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
@@ -50,6 +54,9 @@ jobs:
         with:
           test_result_pattern: "target/surefire-reports/*.xml"
           test_coverage_pattern: "target/site/jacoco/jacoco.xml"
+
+      - name: Create logs directory
+        run: mkdir -p logs
 
       - name: Show logs
         run: cd logs && ls -R && echo '\n' && grep . *
