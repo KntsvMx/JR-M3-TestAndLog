@@ -1,4 +1,4 @@
-# Hippodrome Project
+# TestAndLog Project
 
 This project involves extending an existing Java application for simulating horse races by adding robust testing and logging capabilities. The solution ensures high code quality with comprehensive test coverage and detailed logs for debugging and analysis. Also use 
 GitHub Actions for checking the completion of the test, logging information and build process.
